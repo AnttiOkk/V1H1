@@ -2,6 +2,7 @@ var N_SIZE = 5,
   EMPTY = "&nbsp;",
   boxes = [],
   turn = "X",
+  vuoro = "1",
   score,
   moves;
 
@@ -87,14 +88,15 @@ function set() {
   moves += 1;
   score[turn] += this.identifier;
   if (win(this)) {
-    alert("Onneksi olkoon pelaaja " + turn + ", olet voittaja!");
+    alert("Player " + vuoro + " won!");
     startNewGame();
   } else if (moves === N_SIZE * N_SIZE) {
-    alert("Draw");
+    alert("Draw!");
     startNewGame();
   } else {
     turn = turn === "X" ? "O" : "X";
-    document.getElementById("turn").textContent = "Pelaaja " + turn;
+    vuoro = vuoro === "1" ? "2" : "1";
+    document.getElementById("turn").textContent = "Player " + vuoro;
   }
 }
 
