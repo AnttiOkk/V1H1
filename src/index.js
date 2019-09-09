@@ -1,7 +1,7 @@
 var N_SIZE = 5,
   EMPTY = "&nbsp;",
   boxes = [],
-  turn = "X",
+  turn = "x",
   vuoro = "1",
   score,
   moves;
@@ -44,11 +44,12 @@ function init() {
  */
 function startNewGame() {
   score = {
-    X: 0,
-    O: 0
+    x: 0,
+    o: 0
   };
   moves = 0;
-  turn = "X";
+  turn = "x";
+  vuoro = "1";
   boxes.forEach(function(square) {
     square.innerHTML = EMPTY;
   });
@@ -94,7 +95,7 @@ function set() {
     alert("Draw!");
     startNewGame();
   } else {
-    turn = turn === "X" ? "O" : "X";
+    turn = turn === "x" ? "o" : "x";
     vuoro = vuoro === "1" ? "2" : "1";
     document.getElementById("turn").textContent = "Player " + vuoro;
   }
