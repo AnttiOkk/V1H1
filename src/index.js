@@ -39,9 +39,7 @@ function init() {
   document.getElementById("tictactoe").appendChild(board);
   startNewGame();
 }
-/*
- * Uusi peli
- */
+/* Uusi peli */
 function startNewGame() {
   score = {
     x: 0,
@@ -50,14 +48,14 @@ function startNewGame() {
   moves = 0;
   turn = "x";
   vuoro = "1";
+  /* pelaaja 1 aloittaa aina pelin */
+  document.getElementById("turn").textContent = "Player " + vuoro;
   boxes.forEach(function(square) {
     square.innerHTML = EMPTY;
   });
 }
 
-/*
- * Voiton tarkistus
- */
+/* Voiton tarkistus */
 function win(clicked) {
   var memberOf = clicked.className.split(/\s+/);
   for (var i = 0; i < memberOf.length; i++) {
@@ -78,9 +76,7 @@ function contains(selector, text) {
   });
 }
 
-/*
- * Paikan asetus ja vuoron vaihto
- */
+/* Paikan asetus ja vuoron vaihto */
 function set() {
   if (this.innerHTML !== EMPTY) {
     return;
